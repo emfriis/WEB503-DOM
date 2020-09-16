@@ -48,3 +48,7 @@ function addListAfterPress(event) { // targets event.
         createListElement();
     }
 }
+
+button.addEventListener("click", addListAfterClick); // Listen to execute afte button clicked.
+
+input.addEventListener("keypress", addListAfterPress); // Listen to execute after enter pressed.
