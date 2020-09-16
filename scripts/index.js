@@ -26,13 +26,25 @@ function createListElement() {
             removeButton.classList = "deleteButton";
             li.appendChild(removeButton);
 
-            removeButton.addEventListener("click", function () {
-                this.parentElement.remove();
+            removeButton.addEventListener("click", function () { // triggers on click of "removeButton".
+                this.parentElement.remove(); // removes parent node.
             });
         } else {
-            this.getElementByClassName("deleteButton")[0].remove(); // deletes node with class "deleteButton"
+            this.getElementByClassName("deleteButton")[0].remove(); // deletes node with class "deleteButton".
         }
     });
     // revert input value back to nothing
     input.value = ";"
+}
+
+function addListAfterClick() {
+    if (inputLength() > 0) {
+        createListElement();
+    }
+}
+
+function addListAfterPress(event) { // targets event.
+    if (inputLength > 0 && event.keyCode === 13) { // keyCode is the ascii for "enter" on keyboard.
+        createListElement();
+    }
 }
