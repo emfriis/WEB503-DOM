@@ -7,20 +7,22 @@ body { /* Creates static background of linear gradient for page. */
     color: white;
 }
 
-.head, .mytext {
+#flex-head {
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
 }
 
-#input, #enter {
-    display: inline-flex;
+#flex-input {
+    display: flex;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
 }
 
 #here {
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
 }
