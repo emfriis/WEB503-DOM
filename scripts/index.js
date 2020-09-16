@@ -3,26 +3,36 @@ var input = document.getElementById("input"); // "input" id is being targeted.
 var ul = document.querySelector("ul"); // "ul" tag is being targeted.
 
 function inputLength() {
-    return input.value.length; // returns length of value found in "input".
+    return input.value.length; // returns length of value found in "input" variable.
 }
 
 function createListElement() {
-    var li = document.createElement("li"); // declares variable as an HTML element with "li" tag.
-    li.appendChild(document.createTextNode(input.value)); // creates a text node for "li" variable with the value of "input".
+    var li = document.createElement("li"); // declares variable with "li" tag.
+    li.appendChild(document.createTextNode(input.value)); // creates a text node for "li" variable with the value of "input" variable.
     ul.appendChild(li); // appends "ul" tag with "li" variable
+
+    li.addEventListener("click", function() {
+        // creates a boolean that toggles the done class on li.
+        // if the list item is clicked this toggles the done class.
+        var finished = this.class.toggle("done"); 
+        // creates a remove button for the finished item.
+        var removeButton = document.createElement("button"); // creates a variable with "button" tag.
+        removeButton.classList.add("deleteButton"); // Adds a class to "removeButton" variable.
+
+        // if the list item is clicked (li add event listener) then
+        // finished is true
+        if (finished) {
+            removeButton.appendChild(document.createTextNode("remove")); // creates a text node for "removeButton" variable as a child of "li".
+            removeButton.classList = "deleteButton";
+            li.appendChild(removeButton);
+
+            removeButton.addEventListener("click", function () {
+                this.parentElement.remove();
+            });
+        } else {
+            this.getElementByClassName("deleteButton")[0].remove(); // deletes node with class "deleteButton"
+        }
+    });
+    // revert input value back to nothing
+    input.value = ";"
 }
-
-li.addEventListener("click", function() {
-    // creates a boolean that toggles the done class on li.
-    // if the list item is clicked this toggles the done class.
-    var finished = this.class.toggle("done");
-    // creates a remove button for the finished item.
-    var removeButton = document.createElement("button");
-    removeButton.classList.add("deleteButton");
-
-    // if the list item is clicked (li add event listener) then
-    // finished is true
-    if (finished) {
-        
-    }
-})
