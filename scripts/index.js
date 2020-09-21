@@ -34,7 +34,7 @@ function createListElement() {
         }
     });
     // revert input value back to nothing
-    input.value = ";"
+    input.value = ""
 }
 
 function addListAfterClick() {
@@ -49,6 +49,6 @@ function addListAfterPress(event) { // targets event.
     }
 }
 
-button.addEventListener("click", addListAfterClick); // Listen to execute afte button clicked.
+button.addEventListener("click", addListAfterClick); // Listen to execute after button clicked.
 
 input.addEventListener("keypress", addListAfterPress); // Listen to execute after enter pressed.

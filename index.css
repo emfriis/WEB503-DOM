@@ -20,19 +20,30 @@ body { /* Creates static background of linear gradient for page. */
     align-items: center;
 }
 
+ul {
+    list-style-type: none;
+}
+
 #here {
     display: flex;
-    flex-direction: column;
+    flex-direction: column; 
     justify-content: center;
     align-items: center;
 }
 
-li {
+#here li {
     border: 5px;
     border-color: white;
     background-color: rgb(45,81,91);
 }
 
 .deleteButton {
-    
+    background-color: red;
+    color: white;
+    border-radius: 30px;
+    margin: 20px;
+}
+
+.done {
+    text-decoration: line-through red;
 }
