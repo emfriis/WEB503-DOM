@@ -6,15 +6,15 @@ function inputLength() {
     return input.value.length; // returns length of value found in "input" variable.
 }
 
-/* function createListElement() {
+function createListElement() { 
     var li = document.createElement("li"); // declares variable with "li" tag.
     li.appendChild(document.createTextNode(input.value)); // creates a text node for "li" variable with the value of "input" variable.
     ul.appendChild(li); // appends "ul" tag with "li" variable
 
-    li.addEventListener("click", function() {
+    li.addEventListener("click", function () {
         // creates a boolean that toggles the done class on li.
         // if the list item is clicked this toggles the done class.
-        var finished = this.class.toggle("done"); 
+        var finished = this.classList.toggle("done"); 
         // creates a remove button for the finished item.
         var removeButton = document.createElement("button"); // creates a variable with "button" tag.
         removeButton.classList.add("deleteButton"); // Adds a class to "removeButton" variable.
@@ -35,9 +35,9 @@ function inputLength() {
     });
     // revert input value back to nothing
     input.value = ""
-} */
+} 
 
-function createListElement() {
+/* function createListElement() {
 	var li = document.createElement("li");
 	li.appendChild(document.createTextNode(input.value));
 	ul.appendChild(li);
@@ -66,7 +66,7 @@ function createListElement() {
 	});
 	// revert input value back to nothing
 	input.value = "";
-}
+} */
 
 
 function addListAfterClick() {
@@ -76,7 +76,7 @@ function addListAfterClick() {
 }
 
 function addListAfterPress(event) { // targets event.
-    if (inputLength > 0 && event.keyCode === 13) { // keyCode is the ascii for "enter" on keyboard.
+    if (inputLength() > 0 && event.keyCode === 13) { // keyCode is the ascii for "enter" on keyboard.
         createListElement();
     }
 }
